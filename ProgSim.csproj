@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,5 +18,9 @@
     <Folder Include="Services\" />
     <Folder Include="Infrastructure\" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call TestBat.bat" WorkingDirectory="$(OutDir)"/>
+  </Target>
 
 </Project>

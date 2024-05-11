@@ -4,8 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgSim.Views.Windows"
+        xmlns:viewmodel="clr-namespace:ProgSim.ViewModels"
+        xmlns:commands="clr-namespace:ProgSim.Commands"
         mc:Ignorable="d"
-        Title="Prog_Life 0.000001" Height="720" Width="1280" ResizeMode="CanResize" WindowStyle="None">
+        Height="720" Width="1280" ResizeMode="CanResize"
+        Title="{Binding Title}" >
+    <!--AllowsTransparency="True" 
+        WindowStyle="None" 
+        Padding="0"-->
+    <Window.DataContext>
+        <viewmodel:MainWindow_ViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/mainmenubackground.jpg" Stretch="Fill"/>
@@ -15,11 +25,12 @@
             <Button Name="btn_newGame" Content="Новая игра" VerticalAlignment="Bottom"  Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2"/>
             <Button IsEnabled="false" Name="btn_continue" Content="Продолжить"  VerticalAlignment="Bottom" Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2"/>
             <Button Visibility="Hidden" Content="Невидимая кнопка. >=)" VerticalAlignment="Bottom" Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2"/>
-            <Button Name="btn_exit" Content="Выход" VerticalAlignment="Bottom" Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2" Click="btn_exit_Click" />
+            <Button Name="btn_exit" Content="Выход" VerticalAlignment="Bottom" Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2">
+                <Button.Command>
+                    <commands:CloseApplication_Command/>
+                </Button.Command>
+            </Button>
+
         </StackPanel>
-
-        
-
-
     </Grid>
 </Window>
