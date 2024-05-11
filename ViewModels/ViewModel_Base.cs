@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProgSim.ViewModels
 {
-    internal abstract class ViewModel_Base : INotifyPropertyChanged, IDisposable
+    public abstract class ViewModel_Base : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -27,8 +27,17 @@ namespace ProgSim.ViewModels
         }
 
         // на всякий реализую, потом если что - переопределю.
+        private bool _disposed;
         public void Dispose()
         {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposing || _disposed) return;
+            _disposed = true;
+            // тут типа освобождение управляемых ресурсов. Может пригодится.
         }
     }
 }
