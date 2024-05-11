@@ -1,9 +1,9 @@
-﻿<Window x:Class="ProgSim.MainWindow"
+﻿<Window x:Class="ProgSim.Views.Windows.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProgSim"
+        xmlns:local="clr-namespace:ProgSim.Views.Windows"
         mc:Ignorable="d"
         Title="Prog_Life 0.000001" Height="720" Width="1280" ResizeMode="CanResize" WindowStyle="None">
     <Grid>
