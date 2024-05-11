@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgSim.ViewModels
+namespace ProgSim.ViewModels.Base
 {
     public abstract class ViewModel_Base : INotifyPropertyChanged, IDisposable
     {
