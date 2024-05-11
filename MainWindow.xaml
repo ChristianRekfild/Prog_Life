@@ -5,16 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgSim"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" ResizeMode="CanResize">
+        Title="Prog_Life 0.000001" Height="720" Width="1280" ResizeMode="CanResize" WindowStyle="None">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Images/mainmenubackground.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/Resources/Images/mainmenubackground.jpg" Stretch="Fill"/>
         </Grid.Background>
 
-        <Button Name="btn_newGame" Content="Новая игра" HorizontalAlignment="Left" Margin="581,505,0,0" VerticalAlignment="Top" Width="188" Height="28"/>
-        <Button IsEnabled="false" Name="btn_continue" Content="Продолжить" HorizontalAlignment="Left" Margin="581,538,0,0" VerticalAlignment="Top" Width="188" Height="28"/>
-        <Button Visibility="Hidden" Content="Невидимая кнопка. >=)" HorizontalAlignment="Left" Margin="581,571,0,0" VerticalAlignment="Top" Width="188" Height="28"/>
-        <Button Name="btn_exit" Content="Выход" HorizontalAlignment="Left" Margin="581,604,0,0" VerticalAlignment="Top" Width="188" Height="28" Click="btn_exit_Click"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+            <Button Name="btn_newGame" Content="Новая игра" VerticalAlignment="Bottom"  Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2"/>
+            <Button IsEnabled="false" Name="btn_continue" Content="Продолжить"  VerticalAlignment="Bottom" Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2"/>
+            <Button Visibility="Hidden" Content="Невидимая кнопка. >=)" VerticalAlignment="Bottom" Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2"/>
+            <Button Name="btn_exit" Content="Выход" VerticalAlignment="Bottom" Width="188" Height="{x:Static SystemParameters.IconHeight}" Margin="2" Click="btn_exit_Click" />
+        </StackPanel>
+
+        
+
 
     </Grid>
 </Window>
